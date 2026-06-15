@@ -18,8 +18,6 @@ jobs:
         run: pip install requests
       - name: Run bot
         run: python main.py
-      - name: Save seen
-        uses: actions/checkout@v3
       - name: Commit seen.json
         run: |
           git config user.email "bot@bot.com"
