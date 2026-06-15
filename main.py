@@ -1,9 +1,9 @@
 import requests
 import json
 
-TELEGRAM_TOKEN = "8786606551:AAGTwTWZoMvnncy3Gw2M22bJb_XsA2mF1Ys"
+TELEGRAM_TOKEN = "8786606551:AAGU4vH5rMYhGCv_oucmvSjmdzhnTLtT58g"
 CHAT_ID = "7256257117"
-QUERY = "Ralph Lauren pantalon"
+QUERY = "nike running phenom elite tech"
 SEEN_FILE = "seen.json"
 
 def load_seen():
@@ -27,7 +27,12 @@ def send_telegram(message, photo_url=None):
 
 def search_vinted(query):
     url = "https://www.vinted.fr/api/v2/catalog/items"
-    params = {"search_text": query, "per_page": 10, "order": "newest_first"}
+    params = {
+        "search_text": query,
+        "per_page": 20,
+        "order": "newest_first",
+        "size_ids": "1"
+    }
     headers = {"User-Agent": "Mozilla/5.0"}
     try:
         r = requests.get(url, params=params, headers=headers)
